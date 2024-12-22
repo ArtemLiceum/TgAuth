@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram Auth</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h1>Добро пожаловать, {{ user.telegram_username }}!</h1>
+    {% else %}
+        <a href="{% url 'telegram_login' %}">
+            <button>Войти через Telegram</button>
+        </a>
+    {% endif %}
+</body>
+</html>
